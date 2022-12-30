@@ -1,9 +1,48 @@
 const url ="https://api.noroff.dev/api/v1/jokes"; 
 
-const resultContainer = document.querySelector (".jokes")
+const resultContainer = document.querySelector (".JokesContainer")
+
+async function getJokes (url, joketype, setup,punchline)
+    const response = await fetch (url);
+    const jokes = await response.json();
+    resultContainer.innerHTML="";
+    result.forEach (function (joke){
+        if (joke.type == joketype){
+            resultContainer.innerHTML+=
+            <a href="index.htm?id=${joke.type}" class ="joketype"></a>
+            <div class="setup">${joke.setup}</div>
+        }
+    });
 
 
 
+
+
+
+
+
+
+/* not working!!! 
+async function getJokes (){
+
+    const response = await fetch (url);
+        const results = await response.json();
+        console.log (results);      
+}
+
+function displayJokes (jokes) {
+    resultContainer.innerHTML="";        
+        for (let i=0; i<results.length; i++){
+            resultContainer.innerHTML +=
+            '<div class="jokestype">${result[i].type} +" " + ${result[i].setup} + ${result[i].punchline}</div>'
+}*/
+
+
+
+
+
+
+/* this is displaying something!
 async function getJokes (){
 
     try{
@@ -11,10 +50,10 @@ async function getJokes (){
         const results = await response.json();
         console.log (results);
      
-        resultContainer.innerHTML="";
+        resultContainer.innerHTML="";        
         for (let i=0; i<results.length; i++){
             resultContainer.innerHTML +=
-            '<div class="jokes">${result[i].type} +" " + ${result[i].setup}</div>'
+            '<div class="jokestype">${result[i].type} +" " + ${result[i].setup} + ${result[i].punchline}</div>'
         }
         
 
@@ -26,7 +65,7 @@ async function getJokes (){
 
 }
 
-getJokes ();
+getJokes ();*/
 
 
 
@@ -96,4 +135,3 @@ getJokes ();*/
             <h1>${jokes.type}</h1>
             <p>${jokes.setup}</p>'
     }}*/
-    
