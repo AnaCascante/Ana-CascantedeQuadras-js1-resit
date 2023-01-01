@@ -4,16 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="styles.css">
     <title>Laugh and be happy</title>
 </head>
+
 <body>
-    <div class = "JokesContainer">
-        <h1>Jokes</h1>
-        <div class = "joketype">Type</div>
-        <p class= "setup">Setup</p>
-        <button class="button" type="button"> <!---link to punchline on joke.html--->Punchline</button>
+
+    <div class="nav">
+        <a class="mainpage" href="index.html">Jokes</a>
+        <a class="singeljoke" href ="joke.html">Joke</a>
     </div>
-    <script src="js/js1.js"></script>
+
+    <div class="categories">
+        <button class="generalBtn" id="generalBtn">General Jokes</button>
+        <button class="programmingBtn" id="programmingBtn">Programming Jokes</button>
+    </div>
+
+    <h1>Jokes</h1>
+
+    <div class="jokes">
+        <button class="showhideBtn" id="showhideBtn">Punchline</button>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
