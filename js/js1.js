@@ -16,6 +16,30 @@ async function getJokes (url, joketype, setup,punchline)
 
 
 
+async function getJokes (){
+
+    try{
+    const response = await fetch (url);
+        const results = await response.json();
+        console.log (results);
+     
+        resultContainer.innerHTML="";        
+        for (let i=0; i<results.length; i++){
+            resultContainer.innerHTML +=
+            '<div class="jokestype">${result[i].type} +" " + ${result[i].setup} + ${result[i].punchline}</div>'
+        }
+        
+
+
+    }catch (error){
+        console.log (error);
+        resultContainer.innerHTML= message ("Something went wrong!")
+    }
+
+}
+
+getJokes ();
+
 
 
 
@@ -42,30 +66,6 @@ function displayJokes (jokes) {
 
 
 
-/* this is displaying something!
-async function getJokes (){
-
-    try{
-    const response = await fetch (url);
-        const results = await response.json();
-        console.log (results);
-     
-        resultContainer.innerHTML="";        
-        for (let i=0; i<results.length; i++){
-            resultContainer.innerHTML +=
-            '<div class="jokestype">${result[i].type} +" " + ${result[i].setup} + ${result[i].punchline}</div>'
-        }
-        
-
-
-    }catch (error){
-        console.log (error);
-        resultContainer.innerHTML= message ("Something went wrong!")
-    }
-
-}
-
-getJokes ();*/
 
 
 
